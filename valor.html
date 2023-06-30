@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Validação de Nota</title>
+</head>    
+
+<body>
+    <script>
+        var nota = prompt("Digite uma nota entre zero e dez:");
+        nota = parseFloat (nota);
+
+        while (nota < 0 || nota > 10 || isNaN(nota)) {
+            alert("Valor inválido! Digite uma nota entre zero e dez.");
+
+            nota = prompt("Digite uma nota entre zero e dez:");
+            nota = parseFloat (nota);
+        }
+
+        alert("Nota válida: " + nota);
+       
+    </script>
+
+</body>
+</html>
