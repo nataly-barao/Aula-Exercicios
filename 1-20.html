@@ -5,33 +5,31 @@
     <title>Números de 1 a 20</title>
 </head>
 <body>
-    <h3>Números de 1 a 20 a baixo:</h3>
-    <pre id="numbersBelow"></pre>
     
-    <h3>Números de 1 a 20 ao lado:</h3>
-    <pre id="numbersNextTo"></pre>
-
     <script>
-        function printNumbersBelow() {
-            let numbersBelow = '';
-            for (let i = 1; i <= 20; i++) {
-                numbersBelow += i + '\n';
-            }
-            document.getElementById('numbersBelow').innerText = numbersBelow;
+        var mostrar;
+    mostrar = prompt("Digite 0 para mostrar os números abaixo ou 1 para ao lado:");
+    
+    if (mostrar === '0') {
+        var numeros = '';
+        for (var i = 1; i <= 20; i++) {
+            numeros += i + '\n';
         }
 
+        alert(numeros);
 
-        function printNumbersNextTo() {
-            let numbersNextTo = '';
-            for (let i = 1; i <= 20; i++) {
-                numbersNextTo += i + ' ';
-            }
-            document.getElementById('numbersNextTo').innerText = numbersNextTo;
-        }
-
-        printNumbersBelow();
-        printNumbersNextTo();
+        } else if (mostrar === '1') {
+        var numeros = ''; 
+        for (var i = 1; i <= 20; i++) { 
+            numeros += i + ' ';
+        } 
+        
+        alert(numeros);
+    } else {   
+        alert("Opção inválida.");
+    }
     </script>
+    
 </body>
 </html>
 </body>
