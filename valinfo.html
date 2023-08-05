@@ -5,67 +5,31 @@
 </head>
 <body>
     <script>
-        function validarInformacoes() {
-            // Ler os valores dos campos do formulário
-            var nome = document.getElementById("nome").value;
-            var idade = parseInt(document.getElementById("idade").value);
-            var salario = parseFloat(document.getElementById("salario").value);
-            var sexo = document.getElementById("sexo").value;
-            var estadoCivil = document.getElementById("estadoCivil").value;
+        
+    do { 
+        nome = prompt("Digite seu nome:"); 
+    } while (nome.length <= 3);
 
-            // Validação do nome
-            if (nome.length <= 3) {
-                alert("O nome deve ter mais de 3 caracteres.");
-                return;
-            }
+    do {
+        idade = parseInt(
+            prompt("Digite sua idade:"));
+        } while (idade < 0 || idade > 150);
+        
+    do { 
+        salario = parseFloat(
+            prompt("Digite seu salário:"));
+        } while (salario <= 0);
 
-            // Validação da idade
-            if (idade <= 0 || idade > 150) {
-                alert("A idade deve estar entre 0 e 150 anos.");
-                return;
-            }
+    do { 
+        sexo = prompt("Digite seu sexo (f ou m):"); 
+        } while (sexo !== 'f' && sexo !== 'm');
 
-            // Validação do salário
-            if (salario <= 0) {
-                alert("O salário deve ser maior que zero.");
-                return;
-            }
+    do { 
+        estadoCivil = prompt("Digite seu estado civil (s,c,v e d):"); 
+        } while (estadoCivil !== 's' && estadoCivil !== 'c' && estadoCivil !== 'v' && estadoCivil !== 'd');
 
-            // Validação do sexo
-            if (sexo !== 'f' && sexo !== 'm') {
-                alert("O sexo deve ser 'f' ou 'm'.");
-                return;
-            }
 
-            // Validação do estado civil
-            if (estadoCivil !== 's' && estadoCivil !== 'c' && estadoCivil !== 'v' && estadoCivil !== 'd') {
-                alert("O estado civil deve ser 's', 'c', 'v' ou 'd'.");
-                return;
-            }
-
-            // Se todas as informações estão corretas, exibir mensagem de sucesso
-            alert("Informações válidas!");
-        }
-    </script>
-
-    <h1>Validação de Informações</h1>
-    <form>
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" required><br>
-
-        <label for="idade">Idade:</label>
-        <input type="number" id="idade" required><br>
-
-        <label for="salario">Salário:</label>
-        <input type="number" step="0.01" id="salario" required><br>
-
-        <label for="sexo">Sexo:</label>
-        <input type="text" id="sexo" required><br>
-
-        <label for="estadoCivil">Estado Civil:</label>
-        <input type="text" id="estadoCivil" required><br>
-
-        <input type="button" value="Validar" onclick="validarInformacoes()">
-    </form>
+    alert("Nome: " + nome + "\nIdade: " + idade + "\nSalario: " + salario + "\nSexo: " + sexo + "\nEstado Civil: " + estadoCivil);
+        
 </body>
 </html>
